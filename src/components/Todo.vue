@@ -25,11 +25,7 @@
 
         const invert = () => {
           this.askRemove = !this.askRemove
-          if (this.classes === this.confirmClass) {
-            this.classes = this.baseClass
-          } else {
-            this.classes = this.confirmClass
-          }
+          this.classes = (this.classes === this.confirmClass) ? this.baseClass : this.confirmClass
         }
         if (this.askRemove) {
           this.$emit('remove')

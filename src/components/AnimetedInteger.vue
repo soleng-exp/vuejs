@@ -28,7 +28,7 @@
     },
     methods: {
       tween: function (startValue, endValue) {
-        var vm = this
+        const vm = this
 
         function animate() {
           if (Tween.update()) {

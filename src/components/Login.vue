@@ -1,6 +1,7 @@
 <template>
   <login-form
     v-bind:userLogin="userLog"
+    v-bind:errors="errors"
     v-on:login="login"
     v-if="!isLogged()"></login-form>
 </template>
@@ -17,6 +18,7 @@
           username: '',
           password: ''
         },
+        errors: [],
       }
     },
     components: {
@@ -26,7 +28,7 @@
       isLogged: function () {
         console.log(this.$jwt)
         if (true === this.$jwt.hasToken()) {
-          console.log(this.$jwt.decode())
+          console.log(this.$jwt.decode());
           return true
         }
 
@@ -38,7 +40,12 @@
         Axios.post(process.env.API_URL + "/login", this.userLog).then(r => {
           localStorage.setItem(vm.$jwt.options.keyName, r.data.token)
         })
-          .catch(e => console.log(e));
+          .catch(e => {
+            console.log('vue')
+            console.log(this.errors)
+            this.errors.push('test')
+            console.log(e)
+          });
       }
     }
   }

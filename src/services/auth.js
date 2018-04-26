@@ -10,8 +10,8 @@ export default {
     context.$http.post('/api/login', creds, (data) => {
       localStorage.setItem('user', JSON.stringify(data))
 
-      this.authenticated = true
-      context.$root.user = data
+      this.authenticated = true;
+      context.$root.user = data;
 
       // Redirect to a specified route
       if (redirect) {

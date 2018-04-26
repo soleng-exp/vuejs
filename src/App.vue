@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hr>
     <navigation-bar></navigation-bar>
-    <hr>
     <router-view/>
   </div>
 </template>
 
 <script>
   import NavigationBar from "./components/NavigationBar";
+
+  const jquery = require('../node_modules/jquery/dist/jquery.min.js');
+  const bootstrap = require('../node_modules/bootstrap/dist/js/bootstrap.min.js');
 
   export default {
     name: 'App',
@@ -21,7 +21,6 @@
 
 <style>
   @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-  @import "../node_modules/bootstrap-vue/dist/bootstrap-vue.min.css";
   @import "../node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.min.css";
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -29,6 +28,14 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+  }
+  #navbar-main {
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+  }
+
+  .bg-primary {
+    background-color: white!important;
   }
 </style>

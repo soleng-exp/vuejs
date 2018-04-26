@@ -1,50 +1,76 @@
 <template>
-  <div id="app">
-    <div id="app-2">
-      <p v-bind:title="message">
-        Hover your mouse over me for a few seconds
-        to see my dynamically bound title!
-      </p>
-    </div>
-    <div id="app-3">
-      <span v-if="seen">Now you see me</span>
-    </div>
-    <div id="app-4">
-      <ol>
-        <li v-for="todo in todos">
-          {{ todo.text }}
-        </li>
-      </ol>
-    </div>
-    <div id="app-5">
-      <p>{{ message5 }}</p>
-      <button v-on:click="reverseMessage">Reverse Message</button>
-    </div>
-    <div id="app-6">
-      <p v-once>{{ message5 }}</p>
-      <input v-once v-model="message5">
-    </div>
-    <div id="app-7">
-      <ol>
-        <todo
-          v-for="item in groceryList"
-          v-bind:todo="item"
-          v-bind:key="item.id">
-        </todo>
-      </ol>
-    </div>
-    <p>Using mustaches: {{ rawHtml }}</p>
-    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
-
-    <div id="watch-example">
-      <p>
-        Posez votre question (réponse par Oui ou Non) :
-        <input v-model="question">
-      </p>
-      <p>{{ answer }}</p>
+  <div id="app" style="padding: 1.5rem">
+    <div class="card-columns">
+      <div id="app-2" class="card p-3">
+        <div class="card-body">
+          <h5 class="card-title">Title:Hover</h5>
+          <p class="card-text" v-bind:title="message">
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+          </p>
+        </div>
+      </div>
+      <div id="app-3" class="card p-3">
+        <h5 class="card-title">v-if</h5>
+        <div class="card-body">
+          <span v-if="seen">Now you see me</span>
+        </div>
+      </div>
+      <div id="app-4" class="card p-3">
+        <h5 class="card-title">v-for in</h5>
+        <div class="card-body">
+          <ol>
+            <li v-for="todo in todos">
+              {{ todo.text }}
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div id="app-5" class="card p-3">
+        <h5 class="card-title">Reverse</h5>
+        <div class="card-body">
+          <p>{{ message5 }}</p>
+          <button v-on:click="reverseMessage" class="btn btn-primary">Reverse</button>
+        </div>
+      </div>
+      <div id="app-6" class="card p-3">
+        <h5 class="card-title">v-once</h5>
+        <div class="card-body">
+          <p v-once>{{ message5 }}</p>
+          <input v-once v-model="message5" class="form-control">
+        </div>
+      </div>
+      <div id="app-7" class="card p-3">
+        <h5 class="card-title">components</h5>
+        <div class="card-body">
+          <ol>
+            <todo
+              v-for="item in groceryList"
+              v-bind:todo="item"
+              v-bind:key="item.id">
+            </todo>
+          </ol>
+        </div>
+      </div>
+      <div id="app-8" class="card p-3">
+        <h5 class="card-title">RawHTML</h5>
+        <div class="card-body">
+          <p>Using mustaches: {{ rawHtml }}</p>
+          <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+        </div>
+      </div>
+      <div id="watch-example" class="card p-3">
+        <h5 class="card-title">Event Watch</h5>
+        <div class="card-body">
+          <p>
+            Posez votre question (réponse par Oui ou Non) :
+            <input v-model="question" class="form-control">
+          </p>
+          <p>{{ answer }}</p>
+        </div>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script>

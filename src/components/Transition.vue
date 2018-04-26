@@ -1,54 +1,75 @@
 <template>
-  <div id="demo">
-    <button v-on:click="show = !show">
-      Permuter
-    </button>
-    <transition name="slide-fade">
-      <p v-if="show">bonjour</p>
-    </transition>
-    <transition name="fade">
-      <p v-if="show">bonjour</p>
-    </transition>
-    <transition name="bounce">
-      <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </transition>
-    <transition
-      name="custom-classes-transition"
-      enter-active-class="animated tada"
-      leave-active-class="animated bounceOutRight"
-    >
-      <p v-if="show">bonjour</p>
-    </transition>
-
-    <div id="animated-number-demo">
-      <input v-model.number="number" type="number" step="20">
-      <p>{{ animatedNumber }}</p>
-    </div>
-
-    <div id="example-7">
-      <input
-        v-model="colorQuery"
-        v-on:keyup.enter="updateColor"
-        placeholder="Entrer une couleur"
-      >
-      <button v-on:click="updateColor">Mettre à jour</button>
-      <p>Aperçu :</p>
-      <span
-        v-bind:style="{ backgroundColor: tweenedCSSColor }"
-        class="example-7-color-preview"
-      ></span>
-      <p>{{ tweenedCSSColor }}</p>
-    </div>
-
-    <div id="example-8">
-      <input v-model.number="firstNumber" type="number" step="20"> +
-      <input v-model.number="secondNumber" type="number" step="20"> =
-      {{ result }}
-      <p>
-        <animated-integer v-bind:value="firstNumber"></animated-integer> +
-        <animated-integer v-bind:value="secondNumber"></animated-integer> =
-        <animated-integer v-bind:value="result"></animated-integer>
-      </p>
+  <div style="padding: 1.5rem">
+    <div class="card-columns">
+      <div id="app-1" class="card p-3">
+        <div class="card-body">
+          <h5 class="card-title btn btn-primary" v-on:click="show = !show">Permuter</h5>
+          <div class="card-text">
+            <transition name="slide-fade">
+              <p v-if="show">bonjour</p>
+            </transition>
+            <transition name="fade">
+              <p v-if="show">bonjour</p>
+            </transition>
+            <transition name="bounce">
+              <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </transition>
+            <transition
+              name="custom-classes-transition"
+              enter-active-class="animated tada"
+              leave-active-class="animated bounceOutRight"
+            >
+              <p v-if="show">bonjour</p>
+            </transition>
+          </div>
+        </div>
+      </div>
+      <div id="app-2" class="card p-3">
+        <div class="card-body">
+          <h5 class="card-title">counter animated</h5>
+          <div class="card-text">
+            <input v-model.number="number" type="number" step="20" class="form-control">
+            <p>{{ animatedNumber }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="app-3" class="card p-3">
+        <div class="card-body">
+          <h5 class="card-title">color trans</h5>
+          <div class="card-text">
+            <input
+              v-model="colorQuery"
+              v-on:keyup.enter="updateColor"
+              placeholder="Entrer une couleur"
+              class="form-control"
+            >
+            <button v-on:click="updateColor">Mettre à jour</button>
+            <p>Aperçu :</p>
+            <span
+              v-bind:style="{ backgroundColor: tweenedCSSColor }"
+              class="example-7-color-preview"
+            ></span>
+            <p>{{ tweenedCSSColor }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="app-4" class="card p-3">
+        <div class="card-body">
+          <h5 class="card-title">input trans</h5>
+          <div class="card-text">
+            <input v-model.number="firstNumber" type="number" step="20" class="form-control"/> +
+            <input v-model.number="secondNumber" type="number" step="20" class="form-control"/> =
+            {{ result }}
+            <p>
+              <animated-integer v-bind:value="firstNumber"></animated-integer>
+              +
+              <animated-integer v-bind:value="secondNumber"></animated-integer>
+              =
+              <animated-integer v-bind:value="result"></animated-integer>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
