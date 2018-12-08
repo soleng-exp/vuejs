@@ -22,7 +22,7 @@
     "material-design-iconic-font": "^2.2.0",
     "popper.js": "^1.14.3",
     "tween.js": "^16.6.0",
-    "vue": "^2.5.16",
+    "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuejs-jwt": "^1.1.0"
   },
