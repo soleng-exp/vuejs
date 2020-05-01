@@ -11,7 +11,9 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "animate.css": "^3.6.1",
@@ -24,7 +26,8 @@
     "tween.js": "^16.6.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vuejs-jwt": "^1.1.0"
+    "vuejs-jwt": "^1.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",
@@ -92,5 +95,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "snyk": true
 }
